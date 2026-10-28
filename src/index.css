@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap");
+
+:root {
+  --rose:           #e8557a;
+  --rose-light:     #f4839e;
+  --rose-deep:      #c23b64;
+  --rose-vivid:     #ff3d7f;
+  --gold:           #d4a853;
+  --gold-light:     #f0c97a;
+  --gold-vivid:     #ffbe3d;
+  --lavender:       #9b7fd4;
+  --lavender-light: #c4aaee;
+  --teal:           #2dd4bf;
+  --petal:          #fde8ef;
+  --cream:          #fff9f5;
+  --ink:            #2d1f2e;
+  --ink-soft:       #5a3f50;
+  --glass-bg:       rgba(255,248,252,0.82);
+  --glass-border:   rgba(232,85,122,0.22);
+  --glass-shadow:   0 20px 60px rgba(195,60,100,0.16);
+  --font-serif:     "Cormorant Garamond",Georgia,serif;
+  --font-script:    "Dancing Script",cursive;
+  --font-display:   "Playfair Display",Georgia,serif;
+  --font-body:      "Quicksand",sans-serif;
+  --font-heading:   "Outfit",sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 15% 8%,  rgba(232,85,122,.28) 0%,transparent 48%),
+    radial-gradient(ellipse at 85% 88%, rgba(155,127,212,.24) 0%,transparent 48%),
+    radial-gradient(ellipse at 55% 42%, rgba(212,168,83,.14)  0%,transparent 45%),
+    radial-gradient(ellipse at 30% 75%, rgba(255,61,127,.12)  0%,transparent 40%),
+    linear-gradient(160deg,#fff0f5 0%,#fdf4ff 35%,#fff8f0 70%,#f5f0ff 100%);
+  background-attachment:fixed;
+  font-family:var(--font-body);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(232,85,122,.055) 0%,transparent 50%),
+    radial-gradient(circle at 80% 80%,rgba(155,127,212,.055) 0%,transparent 50%);
+  animation:bgShift 14s ease-in-out infinite alternate;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes bgShift{
+  0%  {opacity:1;}
+  100%{opacity:.4;filter:hue-rotate(25deg);}
+}
+
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:rgba(255,240,245,.6)}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--rose),var(--lavender),var(--gold));
+  border-radius:8px;
+}
+
+/* ===== GLASS PANEL ===== */
+.glass-panel{
+  background:var(--glass-bg);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid var(--glass-border);
+  box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.78),inset 0 -1px 0 rgba(232,85,122,.05);
+  border-radius:32px;
+}
+
+/* ===== LETTER CARD ===== */
+.letter-card{
+  background:linear-gradient(160deg,rgba(255,252,248,.97) 0%,rgba(255,238,250,.93) 100%);
+  border:1px solid rgba(212,168,83,.28);
+  border-left:4px solid var(--gold);
+  border-radius:4px 32px 32px 4px;
+  box-shadow:0 16px 50px rgba(195,60,100,.14),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(16px);
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes floatGentle    {0%,100%{transform:translateY(0) rotate(-1.5deg)} 50%{transform:translateY(-18px) rotate(1.5deg)}}
+@keyframes floatGentle2   {0%,100%{transform:translateY(0) rotate(1deg)}   50%{transform:translateY(-12px) rotate(-1deg)}}
+@keyframes heartPulse     {0%,100%{transform:scale(1)}      45%{transform:scale(1.18)}}
+@keyframes heartPulse2    {0%,100%{transform:scale(1) rotate(-5deg)} 50%{transform:scale(1.22) rotate(5deg)}}
+@keyframes shimmerText    {0%{background-position:-280% center} 100%{background-position:280% center}}
+@keyframes softGlow{
+  0%,100%{box-shadow:0 8px 28px rgba(195,60,100,.38),inset 0 1px 0 rgba(255,255,255,.2)}
+  50%    {box-shadow:0 18px 55px rgba(195,60,100,.65),0 0 60px rgba(155,127,212,.28),inset 0 1px 0 rgba(255,255,255,.3)}
+}
+@keyframes fadeInUp       {from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn        {from{opacity:0;transform:scale(.85)}       to{opacity:1;transform:scale(1)}}
+@keyframes lineReveal     {from{opacity:0;transform:translateX(-22px)} to{opacity:1;transform:translateX(0)}}
+@keyframes blinkCursor    {0%,100%{opacity:1} 50%{opacity:0}}
+@keyframes pulseGlow      {0%,100%{box-shadow:0 0 18px rgba(232,85,122,.4)} 50%{box-shadow:0 0 42px rgba(232,85,122,.82)}}
+@keyframes bounceTitle    {0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}}
+@keyframes fadeUpStagger  {from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)}}
+@keyframes gradientShift  {0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}}
+@keyframes rippleOut{0%{transform:scale(0);opacity:.7} 100%{transform:scale(4);opacity:0}}
+@keyframes auraPulse      {0%,100%{transform:scale(1);opacity:.35} 50%{transform:scale(1.18);opacity:.65}}
+@keyframes fadeSlideIn    {from{opacity:0;transform:translateY(18px) scale(.96)} to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes spin180        {from{transform:rotate(0deg)} to{transform:rotate(360deg)}}
+
+.floating-ambient  {animation:floatGentle  5.5s ease-in-out infinite}
+.floating-ambient2 {animation:floatGentle2 7s   ease-in-out infinite}
+
+/* ===== HEADING STYLES ===== */
+h1.title-display,h1.title-bubble{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:700;
+  background:linear-gradient(135deg,#a8003f 0%,#e8557a 28%,#d4a853 52%,#ff80ab 72%,#c23b64 100%);
+  background-size:380% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmerText 6s linear infinite;
+  line-height:1.15;
+}
+h1.title-display{font-size:clamp(2.4rem,6vw,4.4rem)}
+h1.title-bubble {font-size:clamp(2.2rem,5vw,3.8rem)}
+h1.title-script{
+  font-family:var(--font-script);
+  font-size:clamp(2.4rem,6vw,4rem);
+  color:var(--rose);
+  text-shadow:0 2px 16px rgba(232,85,122,.32);
+}
+
+/* ===== PREMIUM BUTTONS ===== */
+.bday-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:1rem 2.6rem;
+  font-size:1.1rem;
+  font-family:var(--font-heading);
+  font-weight:600;
+  letter-spacing:.4px;
+  color:#fff;
+  background:linear-gradient(135deg,#a8003f,#e8557a,#ff80ab,#d4a853);
+  background-size:300% 300%;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  box-shadow:
+    0 8px 32px rgba(195,60,100,.44),
+    0 2px 8px rgba(195,60,100,.2),
+    inset 0 1px 0 rgba(255,255,255,.28);
+  transition:all .38s cubic-bezier(.175,.885,.32,1.275);
+  outline:none;
+  user-select:none;
+  animation:softGlow 3s ease-in-out infinite, gradientShift 4.5s ease infinite;
+}
+.bday-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.22) 0%,transparent 55%);
+  border-radius:inherit;
+  pointer-events:none;
+}
+.bday-btn:hover{
+  transform:translateY(-5px) scale(1.07);
+  box-shadow:0 22px 55px rgba(195,60,100,.6),0 0 0 3px rgba(232,85,122,.22);
+}
+.bday-btn:active{transform:translateY(1px) scale(.97);}
+
+.bday-btn.story-mode{
+  background:linear-gradient(135deg,#6a00b5,#9b7fd4,#e8557a,#d4a853);
+  background-size:300% 300%;
+  box-shadow:0 8px 36px rgba(155,109,255,.52),inset 0 1px 0 rgba(255,255,255,.25);
+  animation:softGlow 3s ease-in-out infinite, gradientShift 5s ease infinite;
+}
+.bday-btn.story-mode:hover{
+  box-shadow:0 22px 58px rgba(155,109,255,.68),0 0 0 3px rgba(155,127,212,.3);
+}
