@@ -66,7 +66,7 @@ export const birthdayData = {
       },
       {
         id: 4,
-        text: "With you, even the most ordinary moments, a quiet evening, a random walk, a late-night call, feel like scenes from a movie I never want to end. You turn life into magic.",
+        text: "With you, even the most ordinary moments, a quiet evening, a random call, feel like scenes from a movie I never want to end. You turn life into magic.",
         emoji: "sparkle",
         gif: "/gif2.gif",
         tag: "Magic In Every Moment"
